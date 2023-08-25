@@ -1,7 +1,7 @@
 import { ApexOptions } from 'apexcharts'
 import React from 'react'
 import ApexCharts from './apexcharts'
-// (window as any).ApexCharts = ApexCharts
+(window as any).ApexCharts = ApexCharts
 
 export default class Charts extends React.Component<ChartsProps, {}> {
 	chartRef: React.RefObject<HTMLElement>
@@ -11,6 +11,7 @@ export default class Charts extends React.Component<ChartsProps, {}> {
 		super(props)
 
 		this.chartRef = React.createRef()
+		this.chart 
 	}
 
 	render() {
@@ -24,7 +25,7 @@ export default class Charts extends React.Component<ChartsProps, {}> {
 	componentDidMount() {
 		const current = this.chartRef.current
 
-		if(ApexCharts) {
+		if(ApexCharts.constructor) {
 			this.chart = new ApexCharts(current, this.getConfig())
 	
 			this.chart?.render()
