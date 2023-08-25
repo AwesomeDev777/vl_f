@@ -23,10 +23,12 @@ export default class Charts extends React.Component<ChartsProps, {}> {
 
 	componentDidMount() {
 		const current = this.chartRef.current
-		console.log(current)
-		this.chart = new ApexCharts(current, this.getConfig())
 
-		this.chart?.render()
+		if(ApexCharts) {
+			this.chart = new ApexCharts(current, this.getConfig())
+	
+			this.chart?.render()
+		}
 	}
 
 	getConfig() {
