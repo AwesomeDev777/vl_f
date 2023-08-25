@@ -5,13 +5,12 @@ import ApexCharts from './apexcharts'
 
 export default class Charts extends React.Component<ChartsProps, {}> {
 	chartRef: React.RefObject<HTMLElement>
-	chart: ApexCharts | undefined
+	chart: typeof ApexCharts | undefined
 
 	constructor(props: ChartsProps) {
 		super(props)
 
 		this.chartRef = React.createRef()
-		this.chart 
 	}
 
 	render() {
@@ -24,12 +23,10 @@ export default class Charts extends React.Component<ChartsProps, {}> {
 
 	componentDidMount() {
 		const current = this.chartRef.current
+		
+		this.chart = new ApexCharts(current, this.getConfig())
 
-		if(ApexCharts.constructor) {
-			this.chart = new ApexCharts(current, this.getConfig())
-	
-			this.chart?.render()
-		}
+		this.chart?.render()
 	}
 
 	getConfig() {
