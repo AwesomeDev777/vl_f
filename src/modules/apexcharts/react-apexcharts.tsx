@@ -1,7 +1,7 @@
 import { ApexOptions } from 'apexcharts'
 import React from 'react'
 import ApexCharts from './apexcharts'
-(window as any).ApexCharts = ApexCharts
+// (window as any).ApexCharts = ApexCharts
 
 export default class Charts extends React.Component<ChartsProps, {}> {
 	chartRef: React.RefObject<HTMLElement>
