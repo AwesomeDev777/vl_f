@@ -5,6 +5,7 @@ export interface AsideNavigationMenuSubmenuProps {
 	title: string
 	active?: boolean
 	icon?: React.ReactNode
+	children?: React.ReactNode
 }
 
 const AsideNavigationMenuSubmenu: React.FC<AsideNavigationMenuSubmenuProps> = ({

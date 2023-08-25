@@ -89,7 +89,7 @@ const defaultProps = {
 function getDefaultActiveKey(children: React.ReactNode) {
 	let defaultActiveKey: any
 
-	forEach(children as React.ReactChildren, (child) => {
+	forEach(children as unknown as React.ReactChildren, (child) => {
 		if (defaultActiveKey == null) {
 			defaultActiveKey = child.props.eventKey
 		}
@@ -137,11 +137,11 @@ const Tabs = (props: TabsProps) => {
 			unmountOnExit={unmountOnExit}
 		>
 			<Nav {...controlledProps} role="tablist" as="ul">
-				{map(children as React.ReactChildren, renderTab)}
+				{map(children as unknown as React.ReactChildren, renderTab)}
 			</Nav>
 
 			<TabContent>
-				{map(children as React.ReactChildren, (child) => {
+				{map(children as unknown as React.ReactChildren, (child) => {
 					const childProps = { ...child.props }
 
 					delete childProps.title

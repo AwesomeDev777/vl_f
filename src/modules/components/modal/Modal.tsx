@@ -403,7 +403,7 @@ const Modal: BsPrefixRefForwardingComponent<'div', ModalProps> = React.forwardRe
 		}
 
 		const renderBackdrop = useCallback(
-			(backdropProps) => (
+			(backdropProps: any) => (
 				<div
 					{...backdropProps}
 					className={classNames(`${bsPrefix}-backdrop`, backdropClassName, !animation && 'show')}

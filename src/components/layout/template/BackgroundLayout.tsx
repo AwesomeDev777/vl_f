@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Structure } from '@blueupcode/components'
 import LayoutFloatingButton from '../floating-button/FloatingButton'
 
-const BackgroundLayout: React.FC = ({ children }) => {
+const BackgroundLayout: React.FC = ({ children }: any) => {
 	return (
 		<>
 			<Structure type="holder">

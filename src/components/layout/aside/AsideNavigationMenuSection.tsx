@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
 
 export interface AsideNavigationMenuSectionProps {
-	title: string
+	title: string;
+	children: React.ReactNode
 }
 
 const AsideNavigationMenuSection: React.FC<AsideNavigationMenuSectionProps> = ({ title, children }) => {

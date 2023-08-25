@@ -51,7 +51,7 @@ const TransitionWrapper = React.forwardRef<Transition<any>, TransitionWrapperPro
 				nodeRef={nodeRef}
 			>
 				{typeof children === 'function'
-					? (status: TransitionStatus, innerProps: Record<string, unknown>) =>
+					? (status: any, innerProps: any) =>
 							children(status, {
 								...innerProps,
 								ref: attachRef,

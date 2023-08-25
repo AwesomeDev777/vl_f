@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar'
 export default function useSimplebar() {
 	const simplebarInstance = React.useRef<SimpleBar>()
 
-	const simplebarCallback = React.useCallback((node) => {
+	const simplebarCallback = React.useCallback((node: any) => {
 		if (node) {
 			simplebarInstance.current = new SimpleBar(node)
 		}

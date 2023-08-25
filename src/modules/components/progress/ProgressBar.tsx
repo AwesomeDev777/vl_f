@@ -200,7 +200,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
 		return (
 			<div ref={ref} {...wrapperProps} className={classNames(className, bsPrefix, size && `${bsPrefix}-${size}`)}>
 				{children
-					? map(children as React.ReactChildren, (child) => cloneElement(child, { isChild: true }))
+					? map(children as unknown as React.ReactChildren, (child) => cloneElement(child, { isChild: true }))
 					: renderProgressBar(
 							{
 								min,

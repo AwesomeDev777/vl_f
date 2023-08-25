@@ -114,7 +114,7 @@ const ToggleButtonGroup: BsPrefixRefForwardingComponent<'a', ToggleButtonGroupPr
 
 	return (
 		<ButtonGroup {...controlledProps} ref={ref as any}>
-			{map(children as React.ReactChildren, (child) => {
+			{map(children as unknown as React.ReactChildren, (child) => {
 				const values = getValues()
 				const { value: childVal, onChange: childOnChange } = child.props
 				const handler = (e: Event) => handleToggle(childVal, e)

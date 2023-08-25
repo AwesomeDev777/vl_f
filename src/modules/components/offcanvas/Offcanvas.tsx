@@ -240,7 +240,7 @@ const Offcanvas: BsPrefixRefForwardingComponent<'div', OffcanvasProps> = React.f
 		}
 
 		const renderBackdrop = useCallback(
-			(backdropProps) => <div {...backdropProps} className={classNames(`${bsPrefix}-backdrop`, backdropClassName)} />,
+			(backdropProps: any) => <div {...backdropProps} className={classNames(`${bsPrefix}-backdrop`, backdropClassName)} />,
 			[backdropClassName, bsPrefix]
 		)
 

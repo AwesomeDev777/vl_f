@@ -22,6 +22,7 @@ export interface ThemeProviderProps {
 	attribute?: string | 'class'
 	/** Mapping of theme name to HTML attribute value. Object where key is the theme name and value is the attribute value */
 	value?: ThemeValue
+	children: React.ReactNode
 }
 
 export interface ThemeValue {
@@ -45,7 +46,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	const attrs = !value ? themes : Object.values(value)
 
 	const handleMediaQuery = React.useCallback(
-		(e?) => {
+		(e?:any) => {
 			const systemTheme = getSystemTheme(e)
 			setResolvedTheme(systemTheme)
 			if (theme === 'system' && !forcedTheme) changeTheme(systemTheme, false)
@@ -59,7 +60,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	mediaListener.current = handleMediaQuery
 
 	const changeTheme = React.useCallback(
-		(theme, updateStorage = true, updateDOM = true) => {
+		(theme: any, updateStorage = true, updateDOM = true) => {
 			let name = value?.[theme] || theme
 
 			const enable = disableTransitionOnChange && updateDOM ? disableAnimation() : null
@@ -107,7 +108,7 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
 	}, [])
 
 	const setTheme = React.useCallback(
-		(newTheme) => {
+		(newTheme: any) => {
 			if (forcedTheme) {
 				changeTheme(newTheme, true, false)
 			} else {

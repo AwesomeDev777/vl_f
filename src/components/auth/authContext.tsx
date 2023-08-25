@@ -23,8 +23,12 @@ export interface AuthContextProps {
 	setUserData: (dir: AuthUserData) => void
 }
 
+export interface AuthProviderProps {
+	children: React.ReactNode
+}
+
 // Set authentication provider
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	const [userData, setUserData] = React.useState<AuthUserData>(null)
 	const headers = {"Authorization": cookies} 
 	

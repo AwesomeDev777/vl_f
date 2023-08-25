@@ -105,7 +105,7 @@ type FadeTransitionStatus = typeof ENTERING | typeof ENTERED
 const Fade = React.forwardRef<Transition<any>, FadeProps>(
 	({ className, children, transitionClasses = {}, ...props }, ref) => {
 		const handleEnter = useCallback(
-			(node, isAppearing) => {
+			(node: any, isAppearing: any) => {
 				triggerBrowserReflow(node)
 				props.onEnter?.(node, isAppearing)
 			},

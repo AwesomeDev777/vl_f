@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Col, Portlet, ProgressBar, Row, Widget4 } from '@blueupcode/components'
 import { ProgressBarVariant } from '@blueupcode/components/progress/ProgressBar'
 import * as FeatherIcon from 'react-feather'
-import { Context } from 'vm'
 
 const Widget1 = () => {
 	const [list] = React.useState([
@@ -114,7 +113,7 @@ interface Widget7ComponentProgressProps {
 	highlight: string
 	progress: number
     variant: string
-    icon: Context
+    icon: ReactNode
 }
 
 export default Widget1

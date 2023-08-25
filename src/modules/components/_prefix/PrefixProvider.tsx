@@ -7,7 +7,7 @@ export interface PrefixContextValue {
 }
 
 export interface PrefixProviderProps extends Partial<PrefixContextValue> {
-	children: React.ElementType
+	children: React.ReactNode
 }
 
 const PrefixContext = React.createContext<PrefixContextValue>({ prefixes: {} })
